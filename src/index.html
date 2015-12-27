@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Netflix Enhancement Suite</title>
+	<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,700' rel='stylesheet' type='text/css'>
+	
+	<style>
+		
+		body {
+			font-family: 'Source Code Pro', sans-serif;
+		}
+		
+		.wrap {
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+		
+		.wrap a {
+			border: 1px solid blue;
+			padding: 10px 20px;
+			display: inline-block;
+			text-decoration: none;
+			background: #efefef;
+		}
+		
+		.wrap footer {
+			margin-top: 100px;
+			font-size: 11px;
+		}
+		
+		.wrap .disclaimer {
+			font-weight: 600;
+		}
+		
+		.wrap .highlight {
+			background: #efefef;
+		}
+		
+		
+	</style>
+	
+</head>
+<body>
+	
+	<div class="wrap">
+			
+		<h1>Netflix Enhancement Suite (alpha)</h1>
+		
+		<p class="disclaimer">Use at your own risk.</p>
+		
+		<p class="highlight">To use: Drag an enhancement (e.g. Responsive) to your bookmarks bar and the next time you're on netflix.com click it to activate</p>
+		
+		<h2>Fix responsive handling</h2>
+		
+		<p>Netflix explicitly hides navigation when you're at a small resolution FOR NO REASON.</p>
+		<p>This adds in some styles to bring back the functionality WHICH IS HIDDEN FOR NO REASON.</p>
+		
+		<bookmarklet src="js/responsive.js">Responsive</bookmarklet>
+		<bookmarklet src="js/responsive.debug.js" class="debug">Responsive debug</bookmarklet>
+		
+		<hr>
+		
+		<h2>Chromecast shortcut</h2>
+		
+		<p>To play something on Netflix on your Chromecast you have to click to play, then click the Chromecast icon and then choose the Chromecast device.</p>
+		<p>While there's no way around the Chromecast popup, you can now have the play buttons on the Netflix homepage replaced with a Chromecast button which sets things up for you a bit faster.</p>
+		
+		<bookmarklet src="js/chromecast.js">Chromecast</bookmarklet>
+		<bookmarklet src="js/chromecast.debug.js" class="debug">Chromecast Debug</bookmarklet>
+		
+		<footer>
+		
+			This page is not affiliated with Netflix in any way.
+			
+		</footer>
+		
+		
+	</div>
+	
+	<a href="https://github.com/williamparry/netflixenhancementsuite"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+		
+	
+	
+	<script>
+	
+		window.onload = function() {
+			
+			var as = document.querySelectorAll('a');
+			
+			[].forEach.call(as, function(a) {
+				
+				a.onclick = function(e) {
+					e.preventDefault();
+					alert('Drag this onto your bookmarks bar');
+				}
+				
+			})
+			
+		}
+		
+	</script>
+	
+</body>
+</html>
